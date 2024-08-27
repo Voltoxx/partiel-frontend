@@ -20,23 +20,19 @@ function App() {
         let url;
 
         if (keyword && genreId) {
-            // Si les deux paramètres sont fournis
             url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${keyword}&page=${page}&with_genres=${genreId}`;
         } else if (keyword) {
-            // Si seul le mot-clé est fourni
             url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${keyword}&page=${page}`;
         } else if (genreId) {
-            // Si seul le genre est fourni
             url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${genreId}&page=${page}`;
         } else {
-            // Si aucun paramètre n'est fourni
             url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=${page}`;
         }
 
         const response = await fetch(url);
         const data = await response.json();
-        setMovies(data.results); // Stocker tous les films récupérés
-        setTotalPages(data.total_pages); // Utiliser total_pages directement
+        setMovies(data.results);
+        setTotalPages(data.total_pages);
 
     };
 

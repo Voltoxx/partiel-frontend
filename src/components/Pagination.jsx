@@ -49,7 +49,6 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
 
     return (
         <div className="flex items-center justify-center mt-4 space-x-2">
-            {/* Bouton Précédent */}
             <button
                 onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
                 disabled={currentPage === 1}
@@ -58,7 +57,6 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
                 Précédent
             </button>
 
-            {/* Numéros de page */}
             {pages.map((page, index) => (
                 <button
                     key={index}
@@ -70,7 +68,6 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
                 </button>
             ))}
 
-            {/* Bouton Suivant */}
             <button
                 onClick={() => currentPage < totalPages && onPageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}

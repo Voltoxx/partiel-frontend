@@ -28,7 +28,7 @@ function SearchBar({ onSearch }) {
                         type="button"
                         onClick={handleClear}
                         className="absolute inset-y-0 right-0 flex items-center px-2"
-                        style={{ right: '10px' }} // Adjust positioning if needed
+                        style={{ right: '10px' }}
                     >
                         <svg
                             className="w-4 h-4 text-gray-600"
